@@ -12,6 +12,10 @@
 project_names:
   - term: "DataLad"
     patterns: ["data lad", "data glad", "data lard", "data lab", "date a lad", "datalad"]
+  - term: "dandiset"
+    patterns: ["dandy set"]
+  - term: "DANDI"
+    patterns: ["dandy", "dandandy"]
   - term: "NeuroDebian"
     patterns: ["neuro debian", "neuro-debian", "neurodebian"]
   - term: "rsync"

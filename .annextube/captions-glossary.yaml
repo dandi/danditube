@@ -1,0 +1,1038 @@
+# Domain terminology glossary for caption correction
+# Extracted from https://github.com/repronim/repronim.org and
+# https://github.com/datalad-handbook/book/
+#
+# Format: Each entry has a canonical "term" and "patterns" listing
+# common auto-caption misrecognitions (case-insensitive regex patterns).
+# Some entries also carry an "expansion" for acronyms.
+
+# ===========================================================================
+# Project and organization names
+# ===========================================================================
+project_names:
+  - term: "DataLad"
+    patterns: ["data lad", "data glad", "data lard", "data lab", "date a lad", "datalad"]
+  - term: "NeuroDebian"
+    patterns: ["neuro debian", "neuro-debian", "neurodebian"]
+  - term: "rsync"
+    patterns: ["rar sync"]
+  - term: "ReproNim"
+    patterns: ["repro nim", "repro-nim", "repronim", "repro name", "repro neem", "rupin"]
+  - term: "ReproIn"
+    patterns: ["repro in", "repro-in", "reproin", "repro inn"]
+  - term: "ReproMan"
+    patterns: ["repro man", "repro-man", "reproman", "repro men"]
+  - term: "ReproSchema"
+    patterns: ["repro schema", "repro-schema", "reproschema"]
+  - term: "ReproPond"
+    patterns: ["repro pond", "repro-pond", "repropond"]
+  - term: "ReproLake"
+    patterns: ["repro lake", "repro-lake", "reprolake"]
+  - term: "ReproPub"
+    patterns: ["repro pub", "repro-pub", "repropub"]
+  - term: "ReproFlow"
+    patterns: ["repro flow", "repro-flow", "reproflow"]
+  - term: "ReproStim"
+    patterns: ["repro stim", "repro-stim", "reprostim"]
+  - term: "ReproMon"
+    patterns: ["repro mon", "repro-mon", "repromon"]
+  - term: "ReproZip"
+    patterns: ["repro zip", "repro-zip", "reprozip"]
+  - term: "ReproRehab"
+    patterns: ["repro rehab", "repro-rehab", "reprorehab"]
+  - term: "ReproInventory"
+    patterns: ["repro inventory", "repro-inventory", "reproinventory"]
+  - term: "HeuDiConv"
+    patterns: ["hue d conv", "hue di conv", "heudiconv", "he'd econve?", "hydee?conv"]
+  - term: "Neurobagel"
+    patterns: ["neuro bagel", "neuro-bagel", "neurobagel", "neuro begel"]
+  - term: "Neurodocker"
+    patterns: ["neuro docker", "neuro-docker", "neurodocker"]
+  - term: "Neurodesk"
+    patterns: ["neuro desk", "neuro-desk", "neurodesk"]
+  - term: "NeuroVault"
+    patterns: ["neuro vault", "neuro-vault", "neurovault"]
+  - term: "NeuroStars"
+    patterns: ["neuro stars", "neuro-stars", "neurostars"]
+  - term: "NeuroLibre"
+    patterns: ["neuro libre", "neuro-libre", "neurolibre"]
+  - term: "NeuroBridge"
+    patterns: ["neuro bridge", "neuro-bridge", "neurobridge"]
+  - term: "Nipoppy"
+    patterns: ["knee poppy", "ni poppy", "nipoppy", "nee poppy"]
+  - term: "PyNIDM"
+    patterns: ["pie nidm", "py nidm", "pynidm"]
+  - term: "PyBIDS"
+    patterns: ["pie bids", "py bids", "pybids"]
+  - term: "PyMVPA"
+    patterns: ["pie mvpa", "py mvpa", "pymvpa"]
+  - term: "OpenNeuro"
+    patterns: ["open neuro", "open-neuro", "openneuro"]
+  - term: "Brainlife"
+    patterns: ["brain life", "brain-life", "brainlife", "brainlife.io"]
+  - term: "Brainhack"
+    patterns: ["brain hack", "brain-hack", "brainhack"]
+  - term: "Brainchop"
+    patterns: ["brain chop", "brain-chop", "brainchop"]
+  - term: "BrainStat"
+    patterns: ["brain stat", "brain-stat", "brainstat"]
+  - term: "InterLex"
+    patterns: ["inter lex", "inter-lex", "interlex"]
+  - term: "Testkraken"
+    patterns: ["test kraken", "test-kraken", "testkraken"]
+  - term: "fMRIPrep"
+    patterns: ["f mri prep", "fmri prep", "fmriprep", "f m r i prep"]
+  - term: "fMRIflows"
+    patterns: ["f mri flows", "fmri flows", "fmriflows"]
+  - term: "MRIQC"
+    patterns: ["mri qc", "m r i qc", "mriqc", "mri q c"]
+  - term: "TemplateFlow"
+    patterns: ["template flow", "template-flow", "templateflow"]
+  - term: "Neuroscout"
+    patterns: ["neuro scout", "neuro-scout", "neuroscout"]
+  - term: "MindLogger"
+    patterns: ["mind logger", "mind-logger", "mindlogger"]
+  - term: "FreeSurfer"
+    patterns: ["free surfer", "free-surfer", "freesurfer"]
+  - term: "NiChart"
+    patterns: ["ni chart", "ni-chart", "nichart", "knee chart"]
+  - term: "NiiVue"
+    patterns: ["nii vue", "nii-vue", "niivue", "knee view"]
+  - term: "micapipe"
+    patterns: ["mica pipe", "mica-pipe", "micapipe"]
+  - term: "DataLad Gooey"
+    patterns: ["data lad gooey", "datalad gooey", "data lad gooie"]
+  - term: "DataLad MetaLad"
+    patterns: ["data lad meta lad", "datalad metalad", "meta lad"]
+  - term: "DataLad Catalog"
+    patterns: ["data lad catalog", "datalad catalog"]
+  - term: "GIN"
+    expansion: "G-Node Infrastructure"
+    patterns: ["gin"]
+  - term: "Forgejo"
+    patterns: ["forgejo", "for hey ho", "for geo"]
+  - term: "Forgejo-aneksajo"
+    patterns: ["forgejo aneksajo", "for hey ho aneksajo"]
+  - term: "Figshare"
+    patterns: ["fig share", "figshare"]
+  - term: "con/duct"
+    patterns: ["conduct", "con duct", "con/duct"]
+  - term: "BABS"
+    expansion: "BIDS App Bootstrap"
+    patterns: ["babs"]
+  - term: "eCOBIDAS"
+    patterns: ["e cobidas", "ecobidas", "eco bidas"]
+  - term: "COINSTAC"
+    patterns: ["coinstac", "coin stack", "coin stac"]
+  - term: "Singularity"
+    patterns: ["singularity"]
+  - term: "Apptainer"
+    patterns: ["apptainer", "app tainer"]
+  - term: "LinkML"
+    patterns: ["link ml", "link m l", "linkml"]
+  - term: "dcm2niix"
+    patterns: ["dcm 2 nicks", "dcm2niix", "dcm to nicks", "d c m 2 n i i x"]
+  - term: "BIDScoin"
+    patterns: ["bids coin", "bidscoin"]
+  - term: "BIDSkit"
+    patterns: ["bids kit", "bidskit"]
+  - term: "BIDifier"
+    patterns: ["bid ifier", "bidifier"]
+  - term: "BIDS Validator"
+    patterns: ["bids validator"]
+  - term: "XNAT"
+    patterns: ["xnat", "x nat"]
+  - term: "ChRIS"
+    patterns: ["chris", "ch ris"]
+  - term: "pcntoolkit"
+    patterns: ["pcn toolkit", "pcntoolkit", "p c n toolkit"]
+  - term: "EasyBuild"
+    patterns: ["easy build", "easybuild"]
+  - term: "abagen"
+    patterns: ["abagen", "a bagen"]
+  - term: "LittleBrain"
+    patterns: ["little brain", "littlebrain"]
+  - term: "BlazeGraph"
+    patterns: ["blaze graph", "blazegraph"]
+  - term: "Vue.js"
+    patterns: ["vue js", "vue.js", "view js"]
+  - term: "scikit-learn"
+    patterns: ["scikit learn", "psy kit learn", "sk learn", "sklearn"]
+  - term: "pandas"
+    patterns: ["pandas"]
+  - term: "seaborn"
+    patterns: ["sea born", "seaborn"]
+  - term: "DVC"
+    expansion: "Data Version Control"
+    patterns: ["dvc", "d v c"]
+  - term: "Git LFS"
+    expansion: "Git Large File Storage"
+    patterns: ["git lfs", "git l f s"]
+
+# ===========================================================================
+# Commands and tools (CLI commands)
+# ===========================================================================
+commands:
+  - term: "datalad run"
+    patterns: ["data lad run", "data glad run"]
+  - term: "datalad save"
+    patterns: ["data lad save", "data glad save"]
+  - term: "datalad clone"
+    patterns: ["data lad clone", "data glad clone"]
+  - term: "datalad get"
+    patterns: ["data lad get", "data glad get"]
+  - term: "datalad drop"
+    patterns: ["data lad drop", "data glad drop"]
+  - term: "datalad push"
+    patterns: ["data lad push", "data glad push"]
+  - term: "datalad install"
+    patterns: ["data lad install", "data glad install"]
+  - term: "datalad create"
+    patterns: ["data lad create", "data glad create"]
+  - term: "datalad status"
+    patterns: ["data lad status", "data glad status"]
+  - term: "datalad diff"
+    patterns: ["data lad diff", "data glad diff"]
+  - term: "datalad update"
+    patterns: ["data lad update", "data glad update"]
+  - term: "datalad rerun"
+    patterns: ["data lad re-?run", "data glad re-?run"]
+  - term: "datalad siblings"
+    patterns: ["data lad siblings", "data glad siblings"]
+  - term: "datalad subdatasets"
+    patterns: ["data lad sub ?datasets?", "data glad sub ?datasets?"]
+  - term: "datalad containers-run"
+    patterns: ["data lad containers run", "data glad containers run"]
+  - term: "datalad containers-add"
+    patterns: ["data lad containers add", "data glad containers add"]
+  - term: "datalad containers-list"
+    patterns: ["data lad containers list"]
+  - term: "datalad containers-remove"
+    patterns: ["data lad containers remove"]
+  - term: "datalad download-url"
+    patterns: ["data lad download url", "data glad download url"]
+  - term: "datalad create-sibling-ria"
+    patterns: ["data lad create sibling ria", "data glad create sibling ria"]
+  - term: "datalad create-sibling-github"
+    patterns: ["data lad create sibling github"]
+  - term: "datalad run-procedure"
+    patterns: ["data lad run procedure"]
+  - term: "datalad configuration"
+    patterns: ["data lad configuration"]
+  - term: "datalad meta-add"
+    patterns: ["data lad meta add"]
+  - term: "datalad meta-dump"
+    patterns: ["data lad meta dump"]
+  - term: "datalad meta-extract"
+    patterns: ["data lad meta extract"]
+  - term: "datalad catalog-create"
+    patterns: ["data lad catalog create"]
+  - term: "datalad catalog-add"
+    patterns: ["data lad catalog add"]
+  - term: "datalad catalog-serve"
+    patterns: ["data lad catalog serve"]
+  - term: "datalad catalog-validate"
+    patterns: ["data lad catalog validate"]
+  - term: "datalad catalog-translate"
+    patterns: ["data lad catalog translate"]
+  - term: "datalad catalog-workflow"
+    patterns: ["data lad catalog workflow"]
+  - term: "datalad catalog-set"
+    patterns: ["data lad catalog set"]
+  - term: "datalad catalog-get"
+    patterns: ["data lad catalog get"]
+  - term: "datalad catalog-remove"
+    patterns: ["data lad catalog remove"]
+  - term: "datalad slurm-schedule"
+    patterns: ["data lad slurm schedule"]
+  - term: "datalad slurm-finish"
+    patterns: ["data lad slurm finish"]
+  - term: "datalad slurm-reschedule"
+    patterns: ["data lad slurm reschedule"]
+  - term: "git-annex"
+    patterns: ["get annex", "git annex", "git anex", "get anex", "git a next"]
+  - term: "git annex get"
+    patterns: ["git annex get", "get annex get"]
+  - term: "git annex drop"
+    patterns: ["git annex drop", "get annex drop"]
+  - term: "git annex init"
+    patterns: ["git annex init", "get annex init"]
+  - term: "sbatch"
+    patterns: ["s batch", "sbatch"]
+  - term: "pip install"
+    patterns: ["pip install", "pip in stall"]
+  - term: "conda install"
+    patterns: ["conda install", "konda install"]
+  - term: "apt-get install"
+    patterns: ["apt get install", "apt-get install"]
+
+# ===========================================================================
+# Acronyms
+# ===========================================================================
+acronyms:
+  - term: "BIDS"
+    expansion: "Brain Imaging Data Structure"
+    patterns: ["bids", "beds", "bits", "b i d s"]
+  - term: "NIDM"
+    expansion: "Neuroimaging Data Model"
+    patterns: ["nidm", "n i d m", "need him", "needem"]
+  - term: "FAIR"
+    expansion: "Findable, Accessible, Interoperable, Reusable"
+    patterns: ["fair", "f a i r"]
+  - term: "YODA"
+    expansion: "YODAs Organigram on Data Analysis"
+    patterns: ["yoda", "y o d a"]
+  - term: "fMRI"
+    expansion: "functional Magnetic Resonance Imaging"
+    patterns: ["f ?mri", "f m r i", "fmri", "functional mri"]
+  - term: "MRI"
+    expansion: "Magnetic Resonance Imaging"
+    patterns: ["mri", "m r i", "m\\.r\\.i\\."]
+  - term: "dMRI"
+    expansion: "diffusion Magnetic Resonance Imaging"
+    patterns: ["d ?mri", "d m r i", "dmri", "diffusion mri"]
+  - term: "EEG"
+    expansion: "Electroencephalography"
+    patterns: ["eeg", "e e g"]
+  - term: "DTI"
+    expansion: "Diffusion Tensor Imaging"
+    patterns: ["dti", "d t i"]
+  - term: "DICOM"
+    expansion: "Digital Imaging and Communications in Medicine"
+    patterns: ["dicom", "d i c o m", "dicam", "die com"]
+  - term: "NIfTI"
+    expansion: "Neuroimaging Informatics Technology Initiative"
+    patterns: ["nifti", "nifty", "n i f t i"]
+  - term: "NIH"
+    expansion: "National Institutes of Health"
+    patterns: ["nih", "n i h"]
+  - term: "NIBIB"
+    expansion: "National Institute of Biomedical Imaging and Bioengineering"
+    patterns: ["nibib", "n i b i b"]
+  - term: "INCF"
+    expansion: "International Neuroinformatics Coordinating Facility"
+    patterns: ["incf", "i n c f"]
+  - term: "OHBM"
+    expansion: "Organization for Human Brain Mapping"
+    patterns: ["ohbm", "o h b m"]
+  - term: "COBIDAS"
+    expansion: "Committee on Best Practices in Data Analysis and Sharing"
+    patterns: ["cobidas", "co bidas"]
+  - term: "ENIGMA"
+    expansion: "Enhancing NeuroImaging Genetics through Meta-Analysis"
+    patterns: ["enigma"]
+  - term: "ABCD"
+    expansion: "Adolescent Brain Cognitive Development"
+    patterns: ["abcd", "a b c d"]
+  - term: "HPC"
+    expansion: "High-Performance Computing"
+    patterns: ["hpc", "h p c"]
+  - term: "HTC"
+    expansion: "High-Throughput Computing"
+    patterns: ["htc", "h t c"]
+  - term: "RIA"
+    expansion: "Remote Indexed Archive"
+    patterns: ["ria", "r i a"]
+  - term: "ORA"
+    expansion: "Optional Remote Access"
+    patterns: ["ora", "o r a"]
+  - term: "SSH"
+    expansion: "Secure Shell"
+    patterns: ["ssh", "s s h"]
+  - term: "HTTP"
+    expansion: "Hypertext Transfer Protocol"
+    patterns: ["http", "h t t p"]
+  - term: "HTTPS"
+    expansion: "Hypertext Transfer Protocol Secure"
+    patterns: ["https", "h t t p s"]
+  - term: "DOI"
+    expansion: "Digital Object Identifier"
+    patterns: ["doi", "d o i"]
+  - term: "RRID"
+    expansion: "Research Resource Identifier"
+    patterns: ["rrid", "r r i d", "are rid"]
+  - term: "NWB"
+    expansion: "Neurodata Without Borders"
+    patterns: ["nwb", "n w b"]
+  - term: "WSL"
+    expansion: "Windows Subsystem for Linux"
+    patterns: ["wsl", "w s l"]
+  - term: "WSL2"
+    expansion: "Windows Subsystem for Linux 2"
+    patterns: ["wsl2", "w s l 2", "wsl two"]
+  - term: "OSF"
+    expansion: "Open Science Framework"
+    patterns: ["osf", "o s f"]
+  - term: "FSL"
+    expansion: "FMRIB Software Library"
+    patterns: ["fsl", "f s l"]
+  - term: "SPM"
+    expansion: "Statistical Parametric Mapping"
+    patterns: ["spm", "s p m"]
+  - term: "SLURM"
+    expansion: "Simple Linux Utility for Resource Management"
+    patterns: ["slurm", "s l u r m"]
+  - term: "JSON-LD"
+    expansion: "JavaScript Object Notation for Linked Data"
+    patterns: ["json ld", "json-ld", "j son l d"]
+  - term: "ETL"
+    expansion: "Extract, Transform, Load"
+    patterns: ["etl", "e t l"]
+  - term: "CI"
+    expansion: "Continuous Integration"
+    patterns: ["ci", "c i"]
+  - term: "CI/CD"
+    expansion: "Continuous Integration / Continuous Deployment"
+    patterns: ["ci cd", "c i c d", "ci/cd"]
+  - term: "NITRC"
+    expansion: "Neuroimaging Informatics Tools and Resources Clearinghouse"
+    patterns: ["nitrc", "n i t r c", "nitrik"]
+  - term: "DATS"
+    expansion: "Data Tag Suite"
+    patterns: ["dats", "d a t s"]
+  - term: "UUID"
+    expansion: "Universally Unique Identifier"
+    patterns: ["uuid", "u u i d"]
+  - term: "NTFS"
+    expansion: "New Technology File System"
+    patterns: ["ntfs", "n t f s"]
+  - term: "LINC"
+    expansion: "Large-scale Imaging of Neural Circuits"
+    patterns: ["linc", "l i n c"]
+  - term: "API"
+    expansion: "Application Programming Interface"
+    patterns: ["api", "a p i"]
+  - term: "ANTS"
+    expansion: "Advanced Normalization Tools"
+    patterns: ["ants", "a n t s"]
+  - term: "EXIF"
+    expansion: "Exchangeable Image File Format"
+    patterns: ["exif", "e x i f"]
+  - term: "LFS"
+    expansion: "Large File Storage"
+    patterns: ["lfs", "l f s"]
+  - term: "PROV"
+    expansion: "Provenance Data Model"
+    patterns: ["prov"]
+  - term: "W3C"
+    expansion: "World Wide Web Consortium"
+    patterns: ["w3c", "w 3 c"]
+  - term: "OCR"
+    expansion: "Optical Character Recognition"
+    patterns: ["ocr", "o c r"]
+  - term: "DWIQC"
+    expansion: "Diffusion Weighted Imaging Quality Control"
+    patterns: ["dwiqc", "d w i q c"]
+  - term: "CONNECTS"
+    patterns: ["connects"]
+  - term: "NeuroPRISM"
+    patterns: ["neuro prism", "neuroprism"]
+  - term: "S3"
+    expansion: "Amazon Simple Storage Service"
+    patterns: ["s3", "s 3"]
+
+# ===========================================================================
+# Technical terms (domain-specific vocabulary)
+# ===========================================================================
+technical_terms:
+  - term: "neuroimaging"
+    patterns: ["neuro imaging", "neuro-imaging"]
+  - term: "neuroinformatics"
+    patterns: ["neuro informatics", "neuro-informatics"]
+  - term: "neuroscience"
+    patterns: ["neuro science", "neuro-science"]
+  - term: "neuroanatomy"
+    patterns: ["neuro anatomy", "neuro-anatomy"]
+  - term: "provenance"
+    patterns: ["providence", "provinence", "provenence"]
+  - term: "containerization"
+    patterns: ["container ization", "containerisation"]
+  - term: "reproducibility"
+    patterns: ["reproduce ability", "reproducability"]
+  - term: "reproducible"
+    patterns: ["reproduce able"]
+  - term: "re-executability"
+    patterns: ["re executability", "reexecutability"]
+  - term: "re-executable"
+    patterns: ["re executable", "reexecutable"]
+  - term: "subdataset"
+    patterns: ["sub dataset", "sub data set", "sub-dataset"]
+  - term: "superdataset"
+    patterns: ["super dataset", "super data set", "super-dataset"]
+  - term: "dataset"
+    patterns: ["data set"]
+  - term: "sibling"
+    patterns: ["sibling"]
+  - term: "git-annex"
+    patterns: ["get annex", "git annex", "git a next"]
+  - term: "annex"
+    patterns: ["annex", "a next"]
+  - term: "annexed"
+    patterns: ["annexed", "a nexed"]
+  - term: "symlink"
+    patterns: ["sim link", "sym link", "sym-link"]
+  - term: "checksum"
+    patterns: ["check sum"]
+  - term: "shasum"
+    patterns: ["sha sum", "shah sum"]
+  - term: "hashdir"
+    patterns: ["hash dir", "hash directory"]
+  - term: "preprocessing"
+    patterns: ["pre processing", "pre-processing"]
+  - term: "metadata"
+    patterns: ["meta data", "meta-data"]
+  - term: "preregistration"
+    patterns: ["pre registration", "pre-registration"]
+  - term: "submodule"
+    patterns: ["sub module", "sub-module"]
+  - term: "superproject"
+    patterns: ["super project", "super-project"]
+  - term: "triplestore"
+    patterns: ["triple store", "triple-store"]
+  - term: "ontology"
+    patterns: ["on tology"]
+  - term: "heuristic"
+    patterns: ["heuristic"]
+  - term: "Dockerfile"
+    patterns: ["docker file", "docker-file"]
+  - term: "worktree"
+    patterns: ["work tree", "work-tree"]
+  - term: "object tree"
+    patterns: ["object tree"]
+  - term: "annex key"
+    patterns: ["annex key", "a next key"]
+  - term: "special remote"
+    patterns: ["special remote"]
+  - term: "bare repository"
+    patterns: ["bare repository", "bare repo"]
+  - term: "ephemeral clone"
+    patterns: ["ephemeral clone"]
+  - term: "adjusted branch"
+    patterns: ["adjusted branch"]
+  - term: "run record"
+    patterns: ["run record"]
+  - term: "run procedure"
+    patterns: ["run procedure"]
+  - term: "publication dependency"
+    patterns: ["publication dependency"]
+  - term: "storage sibling"
+    patterns: ["storage sibling"]
+  - term: "data harmonization"
+    patterns: ["data harmonization", "data harmonisation"]
+  - term: "functional connectivity"
+    patterns: ["functional connectivity"]
+  - term: "resting-state"
+    patterns: ["resting state", "resting-state"]
+  - term: "diffusion weighted imaging"
+    patterns: ["diffusion weighted imaging"]
+  - term: "cortical surface"
+    patterns: ["cortical surface"]
+  - term: "white matter"
+    patterns: ["white matter"]
+  - term: "normative modeling"
+    patterns: ["normative modeling", "normative modelling"]
+  - term: "knowledge graph"
+    patterns: ["knowledge graph"]
+  - term: "linked data"
+    patterns: ["linked data"]
+  - term: "semantic web"
+    patterns: ["semantic web"]
+  - term: "data dictionary"
+    patterns: ["data dictionary"]
+  - term: "heredoc"
+    patterns: ["here doc", "here-doc"]
+  - term: "shebang"
+    patterns: ["she bang", "she-bang"]
+  - term: "globbing"
+    patterns: ["globbing"]
+  - term: "conda"
+    patterns: ["conda", "konda"]
+  - term: "Miniconda"
+    patterns: ["mini conda", "mini-conda", "miniconda"]
+  - term: "Homebrew"
+    patterns: ["home brew", "home-brew", "homebrew"]
+  - term: "apt-get"
+    patterns: ["apt get", "apt-get"]
+  - term: ".gitattributes"
+    patterns: ["git attributes", "dot git attributes"]
+  - term: ".gitignore"
+    patterns: ["git ignore", "dot git ignore"]
+  - term: "text2git"
+    patterns: ["text to git", "text 2 git", "text2git"]
+  - term: "bind-mounting"
+    patterns: ["bind mounting", "bind-mounting"]
+  - term: "open consent"
+    patterns: ["open consent"]
+  - term: "data management plan"
+    patterns: ["data management plan"]
+  - term: "biomarker"
+    patterns: ["bio marker", "bio-marker"]
+  - term: "connectome"
+    patterns: ["connectome", "connect ohm"]
+  - term: "multimodal"
+    patterns: ["multi modal", "multi-modal"]
+  - term: "multisite"
+    patterns: ["multi site", "multi-site"]
+  - term: "mega-analysis"
+    patterns: ["mega analysis", "mega-analysis"]
+  - term: "lesion segmentation"
+    patterns: ["lesion segmentation"]
+  - term: "brain atlas"
+    patterns: ["brain atlas"]
+  - term: "parcellation"
+    patterns: ["parcellation"]
+  - term: "voxel"
+    patterns: ["voxel", "voxl"]
+  - term: "scanner"
+    patterns: ["scanner"]
+  - term: "acquisition"
+    patterns: ["acquisition"]
+  - term: "power analysis"
+    patterns: ["power analysis"]
+  - term: "effect size"
+    patterns: ["effect size"]
+  - term: "p-value"
+    patterns: ["p value", "p-value"]
+  - term: "open science"
+    patterns: ["open science"]
+  - term: "open data"
+    patterns: ["open data"]
+  - term: "open source"
+    patterns: ["open source"]
+  - term: "version control"
+    patterns: ["version control"]
+  - term: "data versioning"
+    patterns: ["data versioning"]
+
+# ===========================================================================
+# People (commonly mentioned in ReproNim/DataLad presentations)
+# ===========================================================================
+people:
+  # ReproNim leadership and key personnel
+  - term: "Yaroslav Halchenko"
+    patterns: ["yaroslav", "halchenko", "yaroslav halchenko"]
+  - term: "Yarik"
+    patterns: ["yaric", "yarick", "yark"]
+  - term: "David Kennedy"
+    patterns: ["david kennedy"]
+  - term: "Satrajit Ghosh"
+    patterns: ["satrajit", "satra ghosh", "satra", "ghosh"]
+  - term: "Jean-Baptiste Poline"
+    patterns: ["jean baptiste", "poline", "jb poline", "jean-baptiste poline"]
+  - term: "Maryann Martone"
+    patterns: ["maryann martone", "martone"]
+  - term: "Jeffrey Grethe"
+    patterns: ["jeffrey grethe", "grethe"]
+  - term: "Michael Hanke"
+    patterns: ["michael hanke", "hanke"]
+  - term: "Russell Poldrack"
+    patterns: ["russell poldrack", "poldrack"]
+  - term: "Krzysztof Gorgolewski"
+    patterns: ["krzysztof", "gorgolewski"]
+  - term: "Christopher Markiewicz"
+    patterns: ["chris markiewicz", "markiewicz"]
+  - term: "Oscar Esteban"
+    patterns: ["oscar esteban", "esteban"]
+  - term: "David Keator"
+    patterns: ["david keator", "keator"]
+  - term: "Dorota Jarecka"
+    patterns: ["dorota jarecka", "jarecka"]
+  - term: "Anastasia Yendiki"
+    patterns: ["anastasia yendiki", "yendiki"]
+  - term: "Remi Gau"
+    patterns: ["remi gau"]
+  - term: "Peer Herholz"
+    patterns: ["peer herholz", "herholz"]
+  - term: "Sebastian Urchs"
+    patterns: ["sebastian urchs", "urchs"]
+  - term: "Vince Calhoun"
+    patterns: ["vince calhoun", "calhoun"]
+  - term: "Franco Pestilli"
+    patterns: ["franco pestilli", "pestilli"]
+  - term: "Theodore Van Erp"
+    patterns: ["theo van erp", "van erp"]
+  - term: "Neda Jahanshad"
+    patterns: ["neda jahanshad", "jahanshad"]
+  - term: "Paul Thompson"
+    patterns: ["paul thompson"]
+  - term: "Anders Dale"
+    patterns: ["anders dale"]
+  - term: "Alan Evans"
+    patterns: ["alan evans"]
+  - term: "Daniel Marcus"
+    patterns: ["daniel marcus"]
+  - term: "Bruce Fischl"
+    patterns: ["bruce fischl", "fischl"]
+  - term: "David Van Essen"
+    patterns: ["david van essen", "van essen"]
+  - term: "Brian Nosek"
+    patterns: ["brian nosek", "nosek"]
+  - term: "Ted Satterthwaite"
+    patterns: ["ted satterthwaite", "satterthwaite"]
+  - term: "Ron Kikinis"
+    patterns: ["ron kikinis", "kikinis"]
+  - term: "Benjamin Poldrack"
+    patterns: ["benjamin poldrack"]
+  - term: "Kyle Meyer"
+    patterns: ["kyle meyer"]
+  - term: "Adina Wagner"
+    patterns: ["adina wagner", "adina"]
+  - term: "Laura Waite"
+    patterns: ["laura waite"]
+  - term: "Christian Haselgrove"
+    patterns: ["christian haselgrove", "haselgrove"]
+  - term: "Austin Macdonald"
+    patterns: ["austin macdonald"]
+  - term: "Isaac To"
+    patterns: ["isaac to"]
+  - term: "Alyssa Dai"
+    patterns: ["alyssa dai"]
+  - term: "Brent McPherson"
+    patterns: ["brent mcpherson", "mcpherson"]
+  - term: "Tristan Glatard"
+    patterns: ["tristan glatard", "glatard"]
+  - term: "Stefan Appelhoff"
+    patterns: ["stefan appelhoff", "appelhoff"]
+  - term: "Stephan Heunis"
+    patterns: ["stephan heunis", "heunis"]
+  - term: "Ariel Rokem"
+    patterns: ["ariel rokem", "rokem"]
+  - term: "Konrad Hinsen"
+    patterns: ["konrad hinsen", "hinsen"]
+  - term: "Chris Rorden"
+    patterns: ["chris rorden", "rorden"]
+  - term: "Damien Fair"
+    patterns: ["damien fair"]
+  - term: "Carole Goble"
+    patterns: ["carole goble", "goble"]
+  - term: "Kamil Ugurbil"
+    patterns: ["kamil ugurbil", "ugurbil"]
+  - term: "Nikola Stikov"
+    patterns: ["nikola stikov", "stikov"]
+  - term: "Angie Laird"
+    patterns: ["angie laird"]
+  - term: "Sook-Lei Liew"
+    patterns: ["sook lei liew", "sook-lei"]
+  - term: "Stefano Moia"
+    patterns: ["stefano moia", "moia"]
+  - term: "Stephanie Noble"
+    patterns: ["stephanie noble"]
+  - term: "Guray Erus"
+    patterns: ["guray erus", "erus"]
+  - term: "Johanna Bayer"
+    patterns: ["johanna bayer"]
+  - term: "Catie Chang"
+    patterns: ["catie chang"]
+  - term: "Rudolph Pienaar"
+    patterns: ["rudolph pienaar", "pienaar"]
+  - term: "Arno Klein"
+    patterns: ["arno klein"]
+  - term: "Matt Glasser"
+    patterns: ["matt glasser", "glasser"]
+  - term: "Hugh Garavan"
+    patterns: ["hugh garavan", "garavan"]
+  - term: "Dorit Kliemann"
+    patterns: ["dorit kliemann", "kliemann"]
+  - term: "Kristina Rapuano"
+    patterns: ["kristina rapuano", "rapuano"]
+  - term: "Ross Markello"
+    patterns: ["ross markello", "markello"]
+  - term: "Anna Manelis"
+    patterns: ["anna manelis", "manelis"]
+  - term: "Keith Bush"
+    patterns: ["keith bush"]
+  - term: "Mike Yassa"
+    patterns: ["mike yassa", "yassa"]
+  - term: "Nina Preuss"
+    patterns: ["nina preuss"]
+  - term: "Fahim Imam"
+    patterns: ["fahim imam"]
+  - term: "Sean Hatton"
+    patterns: ["sean hatton"]
+  - term: "Vadim Melnick"
+    patterns: ["vadim melnick", "melnick"]
+  - term: "Yibei Chen"
+    patterns: ["yibei chen"]
+  - term: "Tek Raj Chhetri"
+    patterns: ["tek raj chhetri", "chhetri"]
+  - term: "Julie Bates"
+    patterns: ["julie bates"]
+  - term: "Steven Hodge"
+    patterns: ["steven hodge"]
+  - term: "Arman Jahanpour"
+    patterns: ["arman jahanpour"]
+  - term: "Marisa Heckner"
+    patterns: ["marisa heckner"]
+  - term: "Christian Moench"
+    patterns: ["christian moench", "moench"]
+  - term: "Melissa Kline Struhl"
+    patterns: ["melissa kline struhl"]
+  - term: "Eugenio Iglesias"
+    patterns: ["eugenio iglesias"]
+  - term: "Tim Errington"
+    patterns: ["tim errington"]
+  - term: "Pradeep Raamana"
+    patterns: ["pradeep raamana", "raamana"]
+  - term: "Steffen Bollmann"
+    patterns: ["steffen bollmann", "bollmann"]
+  - term: "Daniel Asay"
+    patterns: ["daniel asay"]
+  - term: "Anisha Keshavan"
+    patterns: ["anisha keshavan", "keshavan"]
+  - term: "Michael Milham"
+    patterns: ["michael milham", "mike milham", "milham"]
+  - term: "Chris Mungall"
+    patterns: ["chris mungall", "mungall"]
+  - term: "Roza Bayrak"
+    patterns: ["roza bayrak", "bayrak"]
+  - term: "Michael O'Shea"
+    patterns: ["michael o'shea"]
+
+# ===========================================================================
+# Institutions and organizations
+# ===========================================================================
+institutions:
+  - term: "UMass Chan Medical School"
+    patterns: ["u mass chan", "umass chan"]
+  - term: "MIT"
+    patterns: ["mit", "m i t", "m\\.i\\.t\\."]
+  - term: "McGovern Institute"
+    patterns: ["mcgovern institute", "mcgovern"]
+  - term: "Dartmouth College"
+    patterns: ["dartmouth"]
+  - term: "McGill University"
+    patterns: ["mcgill"]
+  - term: "Montreal Neurological Institute"
+    patterns: ["montreal neurological"]
+  - term: "UC San Diego"
+    patterns: ["uc san diego", "ucsd"]
+  - term: "UC Irvine"
+    patterns: ["uc irvine"]
+  - term: "Stanford University"
+    patterns: ["stanford"]
+  - term: "Institut Pasteur"
+    patterns: ["institut pasteur", "institute pasteur"]
+  - term: "Center for Open Science"
+    patterns: ["center for open science"]
+  - term: "Mallinckrodt Institute"
+    patterns: ["mallinckrodt"]
+  - term: "Masonic Institute for the Developing Brain"
+    patterns: ["masonic institute"]
+  - term: "Pittsburgh Supercomputing Center"
+    patterns: ["pittsburgh supercomputing"]
+  - term: "Research Center Juelich"
+    patterns: ["juelich", "julich", "juelich research center", "forschungszentrum juelich"]
+  - term: "Harvard Medical School"
+    patterns: ["harvard medical"]
+  - term: "Massachusetts General Hospital"
+    patterns: ["massachusetts general", "mass general"]
+  - term: "University of Pennsylvania"
+    patterns: ["university of pennsylvania", "u penn", "upenn"]
+  - term: "Georgia State University"
+    patterns: ["georgia state"]
+  - term: "University of Texas at Austin"
+    patterns: ["university of texas"]
+  - term: "Worcester Polytechnic Institute"
+    patterns: ["worcester polytechnic"]
+  - term: "University of Manchester"
+    patterns: ["university of manchester"]
+  - term: "University of Minnesota"
+    patterns: ["university of minnesota"]
+  - term: "University of Vermont"
+    patterns: ["university of vermont"]
+  - term: "Barnard College"
+    patterns: ["barnard college"]
+
+# ===========================================================================
+# Conferences, consortia, and initiatives
+# ===========================================================================
+conferences_and_initiatives:
+  - term: "OHBM"
+    expansion: "Organization for Human Brain Mapping"
+    patterns: ["ohbm", "o h b m"]
+  - term: "Brainhack"
+    patterns: ["brain hack", "brainhack"]
+  - term: "Neurohackademy"
+    patterns: ["neuro hackademy", "neurohackademy", "neuro hack academy"]
+  - term: "ENIGMA Consortium"
+    patterns: ["enigma consortium", "enigma"]
+  - term: "Human Connectome Project"
+    patterns: ["human connectome project", "connectome project"]
+  - term: "Canadian Open Neuroscience Platform"
+    patterns: ["canadian open neuroscience"]
+  - term: "ABCD Study"
+    expansion: "Adolescent Brain Cognitive Development Study"
+    patterns: ["abcd study"]
+  - term: "NMIND Consortium"
+    patterns: ["n mind consortium", "nmind"]
+  - term: "ELIXIR"
+    patterns: ["elixir"]
+  - term: "ReproNim/INCF Fellowship"
+    patterns: ["repronim incf fellowship", "repro nim incf"]
+  - term: "ABCD-ReproNim"
+    patterns: ["abcd repronim", "abcd repro nim"]
+  - term: "Open Brain Consent"
+    patterns: ["open brain consent"]
+  - term: "TRUST Principles"
+    patterns: ["trust principles"]
+  - term: "Connectome Coordination Facility"
+    patterns: ["connectome coordination facility"]
+  - term: "Healthy Brains for Healthy Lives"
+    patterns: ["healthy brains for healthy lives"]
+  - term: "Quebec Parkinson Network"
+    patterns: ["quebec parkinson network"]
+  - term: "Boston Adolescent Neuroimaging of Depression and Anxiety"
+    patterns: ["boston adolescent neuroimaging"]
+
+# ===========================================================================
+# DataLad / git-annex specific concepts
+# ===========================================================================
+datalad_concepts:
+  - term: "DataLad dataset"
+    patterns: ["data lad data ?set", "datalad data ?set"]
+  - term: "DataLad extension"
+    patterns: ["data lad extension", "datalad extension"]
+  - term: "DataLad superdataset ///"
+    patterns: ["data lad super ?data ?set", "triple slash"]
+  - term: "datalad-container"
+    patterns: ["data lad container", "datalad container"]
+  - term: "datalad-next"
+    patterns: ["data lad next", "datalad next"]
+  - term: "datalad-slurm"
+    patterns: ["data lad slurm", "datalad slurm"]
+  - term: "datalad-metalad"
+    patterns: ["data lad meta ?lad", "datalad metalad"]
+  - term: "datalad-catalog"
+    patterns: ["data lad catalog", "datalad catalog"]
+  - term: "datalad-gooey"
+    patterns: ["data lad gooey", "datalad gooey", "data lad gooie"]
+  - term: "datalad-installer"
+    patterns: ["data lad installer", "datalad installer"]
+  - term: "RIA store"
+    patterns: ["ria store", "r i a store"]
+  - term: "ORA remote"
+    patterns: ["ora remote", "o r a remote"]
+  - term: "annex UUID"
+    patterns: ["annex uuid", "annex u u i d"]
+  - term: "dataset ID"
+    patterns: ["dataset id", "dataset i d"]
+  - term: "annex key"
+    patterns: ["annex key", "a next key"]
+  - term: "special remote"
+    patterns: ["special remote"]
+  - term: "storage sibling"
+    patterns: ["storage sibling"]
+  - term: "publication dependency"
+    patterns: ["publication dependency"]
+  - term: "adjusted branch"
+    patterns: ["adjusted branch"]
+  - term: "corresponding branch"
+    patterns: ["corresponding branch"]
+  - term: "ephemeral clone"
+    patterns: ["ephemeral clone"]
+  - term: "crippled file system"
+    patterns: ["crippled file system"]
+  - term: "YODA principles"
+    patterns: ["yoda principles"]
+  - term: "YODA procedure"
+    patterns: ["yoda procedure"]
+  - term: "text2git"
+    patterns: ["text to git", "text 2 git", "text2git"]
+  - term: "run record"
+    patterns: ["run record"]
+  - term: "git-annex branch"
+    patterns: ["git annex branch", "get annex branch"]
+  - term: "MD5E backend"
+    patterns: ["md5e backend", "m d 5 e backend"]
+  - term: "hashdirlower"
+    patterns: ["hash dir lower", "hashdirlower"]
+  - term: "hashdirmixed"
+    patterns: ["hash dir mixed", "hashdirmixed"]
+
+# ===========================================================================
+# ReproNim framework concepts
+# ===========================================================================
+repronim_concepts:
+  - term: "DISCOVER"
+    patterns: ["discover"]
+    note: "ReproNim Project 1"
+  - term: "DESCRIBE"
+    patterns: ["describe"]
+    note: "ReproNim Project 2"
+  - term: "DO"
+    patterns: ["do"]
+    note: "ReproNim Project 3"
+  - term: "ReproPond"
+    patterns: ["repro pond", "repropond"]
+    note: "Local/private metadata store"
+  - term: "ReproLake"
+    patterns: ["repro lake", "reprolake"]
+    note: "Shared/public metadata repository"
+  - term: "First Fridays"
+    patterns: ["first fridays"]
+    note: "ReproNim monthly webinar series"
+  - term: "How Would ReproNim Do"
+    patterns: ["how would repronim", "how would repro nim"]
+  - term: "ReproInventory"
+    patterns: ["repro inventory", "reproinventory"]
+  - term: "train-the-trainer"
+    patterns: ["train the trainer"]
+
+# ===========================================================================
+# NIDM-related terms
+# ===========================================================================
+nidm_terms:
+  - term: "NIDM"
+    expansion: "Neuroimaging Data Model"
+    patterns: ["nidm", "n i d m"]
+  - term: "NIDM-Terms"
+    patterns: ["nidm terms", "n i d m terms"]
+  - term: "NIDM-Results"
+    patterns: ["nidm results"]
+  - term: "PyNIDM"
+    patterns: ["py nidm", "pie nidm", "pynidm"]
+  - term: "W3C PROV"
+    patterns: ["w3c prov", "w 3 c prov"]
+  - term: "PROV standard"
+    patterns: ["prov standard"]
+  - term: "segstats_jsonld"
+    patterns: ["seg stats json ld", "segstats jsonld"]
+  - term: "nidmfsl"
+    patterns: ["nidm fsl", "nidmfsl"]
+
+# ===========================================================================
+# Third-party storage and hosting services
+# ===========================================================================
+services:
+  - term: "GitHub"
+    patterns: ["github", "git hub"]
+  - term: "GitLab"
+    patterns: ["gitlab", "git lab"]
+  - term: "Bitbucket"
+    patterns: ["bitbucket", "bit bucket"]
+  - term: "Docker Hub"
+    patterns: ["docker hub", "dockerhub"]
+  - term: "Singularity Hub"
+    patterns: ["singularity hub"]
+  - term: "Amazon S3"
+    patterns: ["amazon s3", "aws s3"]
+  - term: "Amazon ECR"
+    patterns: ["amazon ecr", "aws ecr"]
+  - term: "Google Drive"
+    patterns: ["google drive"]
+  - term: "Google Cloud Storage"
+    patterns: ["google cloud storage"]
+  - term: "ownCloud"
+    patterns: ["own cloud", "owncloud"]
+  - term: "Sciebo"
+    patterns: ["sciebo"]
+  - term: "Box.com"
+    patterns: ["box.com"]
+  - term: "Dropbox"
+    patterns: ["dropbox", "drop box"]
+  - term: "Globus"
+    patterns: ["globus"]
+  - term: "datasets.datalad.org"
+    patterns: ["datasets datalad org", "datasets.datalad.org"]
+  - term: "hub.datalad.org"
+    patterns: ["hub datalad org", "hub.datalad.org"]

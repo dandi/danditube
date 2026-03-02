@@ -1,0 +1,136 @@
+# annextube Configuration File
+# This file configures sources, components, and filters for YouTube archival
+
+# YouTube Data API v3 key (REQUIRED)
+# Get from: https://console.cloud.google.com/apis/credentials
+# IMPORTANT: Set via environment variable, DO NOT store in this file!
+#
+#   export YOUTUBE_API_KEY="your-api-key-here"
+#
+# Never commit API keys to version control!
+
+[[sources]]
+url = "https://www.youtube.com/@dandiarchive"
+type = "channel"
+enabled = true
+include_playlists = "all"
+include_podcasts = "all"
+
+# Add more sources by adding [[sources]] sections above
+
+# Optional playlist/podcast discovery settings (for channel sources):
+# include_playlists = "all"  # Auto-discover and backup ALL playlists from this channel
+# include_playlists = ".*tutorial.*"  # Only playlists matching regex pattern
+# exclude_playlists = ".*shorts.*|.*old.*"  # Exclude playlists matching regex
+# include_podcasts = "all"  # Auto-discover ALL podcasts from channel's Podcasts tab
+# include_podcasts = ".*interview.*"  # Only podcasts matching regex pattern
+
+# Components to backup
+[components]
+videos = true           # Track URLs only (no video downloads) - saves storage
+metadata = true          # Fetch video metadata
+# comments_depth = 10000  # Uncomment to limit (None = unlimited)           # Comments: None = unlimited (fetches ALL, incrementally)
+                         #           0 = disabled
+                         #           N = limit to N comments
+                         # Note: Incremental - merges new comments with existing
+captions = true          # Fetch captions matching language filter
+thumbnails = true        # Download thumbnails
+
+caption_languages = ".*"  # Regex pattern for caption languages to download
+                          # Examples:
+                          #   ".*" - All available languages (default)
+                          #   "en.*" - All English variants (en, en-US, en-GB, etc.)
+                          #   "en|es|fr" - English, Spanish, French only
+                          #   "en-US" - US English only
+
+# Caption curation (ASR auto-correction pipeline)
+# Runs automatically during backup when enabled
+[curation]
+# enabled = true              # Auto-curate captions during backup
+# curated_suffix = "curated"  # Output: video.en-curated.vtt
+
+# Glossary: YAML file with domain-specific terms for correction
+# glossary_path = ".annextube/captions-glossary.yaml"
+# glossary_collate_parents = false  # true = walk up parent dirs, merge all glossaries found
+#                                   # Useful for multi-channel setups: put a shared glossary
+#                                   # in the parent dir, channel-specific ones in each channel
+
+# Cue merging / splitting
+# max_words_per_cue = 12      # Split cues longer than this
+# min_orphan_words = 3        # Merge short trailing cues
+
+# Text normalization
+# filler_removal = true       # Remove "um", "uh", etc.
+# command_quoting = true      # Add backtick quoting around command-like tokens
+
+# Fuzzy glossary matching
+# fuzzy_enabled = true        # Use fuzzy matching for glossary terms
+# fuzzy_threshold = 0.82      # Similarity threshold (0-1)
+
+# LLM-based correction (optional, requires API key/server)
+# llm_provider = "ollama"     # "ollama", "openai", or "anthropic"
+# llm_model = "llama3"        # Model name
+# llm_base_url = "http://localhost:11434"  # For Ollama
+
+# Audio-based alignment (optional, requires stable-ts or ctc)
+# audio_align_method = "stable-ts"  # "stable-ts" or "ctc"
+# audio_align_model = "base"        # Whisper model name
+
+# Repository organization and file paths
+[organization]
+video_path_pattern = "{year}/{month}/{date}_{sanitized_title}"  # Path pattern for videos (video_id tracked in TSV)
+# Available placeholders:
+#   {year} - Publication year (YYYY)
+#   {month} - Publication month (MM)
+#   {date} - Publication date (YYYY-MM-DD)
+#   {video_id} - YouTube video ID (optional, tracked in videos.tsv)
+#   {sanitized_title} - Video title (filesystem-safe, hyphens for words)
+#   {channel_id} - Channel ID
+#   {channel_name} - Channel name (sanitized)
+# Examples:
+#   "{year}/{month}/{date}_{sanitized_title}" - Hierarchical by year/month (default)
+#   "{date}_{sanitized_title}" - Flat layout with date + title
+#   "{date}_{video_id}_{sanitized_title}" - Include ID
+#   "{video_id}" - Just video ID (compact)
+
+channel_path_pattern = "{channel_id}"  # Path pattern for channels
+
+playlist_path_pattern = "{playlist_title}"  # Path pattern for playlists (sanitized title)
+# Available placeholders for playlists:
+#   {playlist_id} - YouTube playlist ID
+#   {playlist_title} - Playlist title (filesystem-safe)
+#   {channel_id} - Channel ID
+#   {channel_name} - Channel name (sanitized)
+
+playlist_video_pattern = "{video_index:04d}_{video_path_basename}"  # Pattern for video symlinks in playlists
+# Available placeholders for playlist videos:
+#   {video_index} - Position in playlist (1-based integer)
+#   {video_path_basename} - Video directory name (from video_path_pattern)
+# Format specifiers supported (e.g., :04d for zero-padded 4 digits)
+# Examples:
+#   "{video_index:04d}_{video_path_basename}" - 0001_2026-01-15_video-title (default)
+#   "{video_index:03d}-{video_path_basename}" - 001-2026-01-15_video-title
+#   "{video_index}_{video_path_basename}" - 1_2026-01-15_video-title
+
+video_filename = "video.mkv"  # Filename for video file (use .mkv for best compatibility)
+
+# Filters for selective archival
+[filters]
+# limit = 10  # Uncomment to limit to N most recent videos (by upload date, newest first)
+
+# Optional date range filter
+# date_start = "2024-01-01"  # ISO 8601 date
+# date_end = "2024-12-31"
+
+# Optional license filter
+# license = "creativeCommon"  # or "standard"
+
+# Optional duration filters (in seconds)
+# min_duration = 60    # Minimum 1 minute
+# max_duration = 3600  # Maximum 1 hour
+
+# Optional view count filter
+# min_views = 1000
+
+# Optional tags filter (OR logic)
+# tags = ["python", "tutorial"]

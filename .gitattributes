@@ -1,2 +1,28 @@
-* annex.backend=MD5E
-**/.git* annex.largefiles=nothing
+# annextube file tracking configuration
+
+# Default: Binary files and files >10k go to git-annex
+* annex.largefiles=(((mimeencoding=binary)and(largerthan=0))or(largerthan=10k))
+
+# Small metadata files -> git (override default)
+*.tsv annex.largefiles=nothing
+*.md annex.largefiles=nothing
+README* annex.largefiles=nothing
+LICENSE* annex.largefiles=nothing
+.gitignore annex.largefiles=nothing
+.gitattributes annex.largefiles=nothing
+
+# Sensitive data files -> git-annex (contains personal information)
+authors.tsv annex.largefiles=anything
+comments.json annex.largefiles=anything
+
+# Large text files -> git-annex (VTT captions)
+*.vtt annex.largefiles=anything
+
+# Media files -> git-annex (covered by default, explicit for clarity)
+*.mp4 annex.largefiles=anything
+*.webm annex.largefiles=anything
+*.mkv annex.largefiles=anything
+*.jpg annex.largefiles=anything
+*.jpeg annex.largefiles=anything
+*.png annex.largefiles=anything
+*.webp annex.largefiles=anything

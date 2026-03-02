@@ -1,0 +1,4 @@
+[submodule ".duct"]
+	path = .duct
+	url = ./.duct
+	datalad-id = 07792d04-26e5-436d-aecd-5f5b36fd8a9e

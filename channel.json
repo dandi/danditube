@@ -4,17 +4,17 @@
   "description": "The BRAIN Initiative archive for publishing and sharing neurophysiology data including electrophysiology, optophysiology, and behavioral time-series, and images from immunostaining experiments.\n",
   "custom_url": "dandiarchive",
   "subscriber_count": 151,
-  "video_count": 44,
-  "playlist_count": 2,
+  "video_count": 50,
+  "playlist_count": 3,
   "avatar_url": "https://yt3.googleusercontent.com/_MrmlrESpo0pAlO4VvIhmdbhv4xZPnDBueEs2X_68gb9U_KXDcrIWlnjV3RKOV8Zni_Za5pcLA=s900-c-k-c0x00ffffff-no-rj",
   "banner_url": "",
   "country": "",
   "created_at": "",
   "archive_stats": {
-    "total_videos_archived": 44,
-    "first_video_date": "2021-11-05T00:00:00",
-    "last_video_date": "2026-02-25T00:00:00",
-    "total_duration_seconds": 72884,
-    "total_size_bytes": 9701217076
+    "total_videos_archived": 50,
+    "first_video_date": "2021-09-13T00:00:00",
+    "last_video_date": "2026-03-13T00:00:00",
+    "total_duration_seconds": 94248,
+    "total_size_bytes": 11001024564
   }
 }
